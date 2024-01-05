@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: demo-appication
+        app: demo-application
     spec:
       containers:
         - name: demo-application
