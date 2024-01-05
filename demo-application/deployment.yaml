@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: demo-application
-          image: quay.io/rh-ee-manesing/demo-application:f325df96a4ab6a296d3d6957d501886b166b0331
+          image: image-registry.openshift-image-registry.svc:5000/demo-application/demo-application:f325df96a4ab6a296d3d6957d501886b166b0331
           ports:
             - containerPort: 8080
               protocol: TCP
