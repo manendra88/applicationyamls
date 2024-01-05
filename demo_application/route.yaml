@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: demo-application-route
+  labels:
+    app: demo-application
+spec:
+  host: demo-appication.apps.cluster-8d6f5.8d6f5.sandbox1821.opentlc.com
+  to:
+    kind: Service
+    name: demo-application-svc
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: None
+  wildcardPolicy: None
+
