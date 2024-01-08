@@ -2,10 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 2
+replicaCount: 1
 
 image:
-  repository: 
+  repository: image-registry.openshift-image-registry.svc:5000/demo-application/demo-application
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1cf75ed6b0497f0b80da084546bedd425eee3b9d"
