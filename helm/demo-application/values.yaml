@@ -8,7 +8,7 @@ image:
   repository: 
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "f325df96a4ab6a296d3d6957d501886b166b0331"
+  tag: "1cf75ed6b0497f0b80da084546bedd425eee3b9d"
 
 imagePullSecrets: []
 nameOverride: ""
