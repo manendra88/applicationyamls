@@ -1,0 +1,53 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: update-deployment
+  namespace: demo-application
+spec:
+  params:
+    - name: image
+      type: string
+    - name: repo-name
+      type: string
+  steps:
+    - image: 'alpine/git:v2.26.2'
+      name: update-yaml
+      resources: {}
+      script: >
+        #!/usr/bin/env sh
+
+        set -e
+
+
+        git config --global user.email "cicd-pipeline@redhat.com"
+
+        git config --global user.name "cicd-pipeline"
+
+
+        rm -rf project
+
+        git clone -b main https://github.com/manendra88/applicationyamls.git 
+        project
+
+        cd project/$(inputs.params.repo-name)
+
+
+        echo "Updating yaml"
+
+
+        sed -i "s#image:
+        [a-zA-Z0-9|.\/|-]*:[0-9|.]*[a-zA-Z0-9|.\/|-]*:[a-zA-Z0-9|.]*#image:
+        $(inputs.params.image)#" deployment.yaml
+
+
+        cat deployment.yaml
+
+        git add -u
+
+        git commit -m "[tekton] updating deployment"
+
+        git push
+      workingDir: $(workspaces.gitops-workspace.path)
+  workspaces:
+    - name: gitops-workspace
+
