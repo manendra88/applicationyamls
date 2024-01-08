@@ -5,8 +5,9 @@ metadata:
   labels:
     {{- include "demo-application.labels" . | nindent 4 }}
 spec:
+  host: {{ .Values.route.customHost }}
   port:
-    targetPort: 8080-tcp
+    targetPort: {{ .Values.route.targetPort }}
   to:
     kind: Service
     name: {{ include "demo-application.fullname" . }}
