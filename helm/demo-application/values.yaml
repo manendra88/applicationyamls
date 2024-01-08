@@ -1,12 +1,12 @@
-# Default values for demo-application.
+# Default values fo demo-application.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 2
 
 image:
-  repository: image-registry.openshift-image-registry.svc:5000/demo-application/demo-application
-  pullPolicy: IfNotPresent
+  repository: 
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "f325df96a4ab6a296d3d6957d501886b166b0331"
 
