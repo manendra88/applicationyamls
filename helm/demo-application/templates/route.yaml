@@ -1,7 +1,7 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: {{ include "demp-application.fullname" . }}
+  name: {{ include "demo-application.fullname" . }}
   labels:
     {{- include "demo-application.labels" . | nindent 4 }}
 spec:
