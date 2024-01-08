@@ -5,7 +5,6 @@ metadata:
   labels:
     app: demo-application
 spec:
-  host: demo-appication.apps.cluster-8d6f5.8d6f5.sandbox1821.opentlc.com
   to:
     kind: Service
     name: demo-application-svc
