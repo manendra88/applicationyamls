@@ -8,7 +8,7 @@ image:
   repository: image-registry.openshift-image-registry.svc:5000/demo-application/demo-application
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "46af43a6476c57bc0856cae2d7ace061b9cdf83b"
+  tag: "2d2ed3637aa113e1f7fdf6d11d3319f51ed8500f"
 
 imagePullSecrets: []
 nameOverride: ""
