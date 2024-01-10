@@ -1,0 +1,16 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  name: pipeline-trigger-binding
+  namespace: iap-cicd-pipelines
+spec:
+  params:
+    - name: git-url
+      value: 'https://github.com/$(body.repository.full_name)'
+    - name: git-branch
+      value: main
+    - name: image
+      value: '$(body.commits[0].id)'
+    - name: repo-name
+      value: $(body.repository.name)
+

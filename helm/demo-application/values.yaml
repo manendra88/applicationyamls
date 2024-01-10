@@ -44,7 +44,7 @@ service:
   port: 8080
 
 route:
-  customHost: demo-application.apps.cluster-8d6f5.8d6f5.sandbox1821.opentlc.com
+  customHost: demo-application.apps.cluster-s4gfk.s4gfk.sandbox1809.opentlc.com
   targetPort: 8080
 
 ingress:

@@ -1,0 +1,25 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: pipeline-event-listener
+  namespace: iap-cicd-pipelines
+spec:
+  namespaceSelector: {}
+  resources: {}
+  serviceAccountName: pipeline
+  triggers:
+    - bindings:
+        - kind: TriggerBinding
+          ref: pipeline-trigger-binding
+      interceptors:
+        - params:
+            - name: filter
+              value: body.repository.master_branch == 'main'
+            - name: overlays
+              value: null
+          ref:
+            kind: ClusterInterceptor
+            name: cel
+      name: cel-trigger-for-master
+      template:
+        ref: pipeline-trigger-template
